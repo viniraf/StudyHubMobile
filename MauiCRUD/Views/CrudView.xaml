@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCRUD.Views.CrudView"
+             
+             xmlns:viewModel="clr-namespace:MauiCRUD.ViewModels"
+             x:DataType="viewModel:CrudViewModel"
+             
+             Title="Página Principal">
+    
+    <VerticalStackLayout Margin="30">
+        
+        <Label Text="Bem-vindo ao Study Hub"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+
+        <Image Source="dotnet_bot.svg"
+               WidthRequest="100"
+               Margin="0,10,0,10"/>
+
+        <Label Text="Registre um grupo de estudo "
+               HorizontalOptions="Center"
+               Margin="0,0,0,15"/>
+
+        <Label Text="Titulo"/>
+        <Entry Text="{Binding Title}"/>
+
+        <Label Text="Descrição"/>
+        <Entry Text="{Binding Description}"/>
+
+        <Label Text="Link"/>
+        <Entry Text="{Binding Link}"/>
+
+        <Button Text="Registrar"
+                Margin="0,15,0,10"
+                Command="{Binding SaveCommand}"/>
+
+        <Button Text="Listar registros"
+                Command="{Binding GetStudyGroupsCommand}"/>
+
+    </VerticalStackLayout>
+</ContentPage>
